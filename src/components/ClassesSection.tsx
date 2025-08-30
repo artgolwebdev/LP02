@@ -183,13 +183,13 @@ const ClassesSection: React.FC = () => {
                 }`}
               >
                 <div className="p-6 pt-0 border-t-4" style={{ borderColor: classData.color }}>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-6 items-start">
                     {/* Description & Features */}
-                    <div>
+                    <div className="flex flex-col h-full">
                       <p className="font-roboto text-foreground text-base md:text-lg leading-relaxed mb-6">
                         {classData.description}
                       </p>
-                      <div>
+                      <div className="flex-1">
                         <h4 className="font-exo font-bold text-foreground mb-3">What You'll Learn:</h4>
                         <ul className="space-y-2">
                           {classData.features.map((feature, index) => (
@@ -208,7 +208,7 @@ const ClassesSection: React.FC = () => {
                     </div>
 
                     {/* Details & CTA */}
-                    <div className="space-y-6">
+                    <div className="flex flex-col justify-center h-full space-y-6">
                       <div className="grid grid-cols-2 gap-4">
                         <div className="flex items-center gap-2">
                           <Clock className="w-5 h-5" style={{ color: classData.color }} />
