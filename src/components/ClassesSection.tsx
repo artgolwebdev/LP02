@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronDown, ChevronUp, Clock, Users, DollarSign, Calendar } from 'lucide-react';
 
 interface ClassData {
@@ -15,68 +16,69 @@ interface ClassData {
 }
 
 const ClassesSection: React.FC = () => {
+  const { t } = useTranslation();
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
   const classes: ClassData[] = [
     {
       id: 'beginner',
-      title: 'BEGINNER BREAKING',
-      level: 'Entry Level',
-      description: 'Perfect for first-timers. Learn basic toprock, simple footwork, and fundamental freezes. No experience required - just bring your energy!',
-      schedule: 'Monday & Wednesday, 7:00-8:30 PM',
-      duration: '90 minutes',
-      capacity: '15 students',
-      price: '₪120/month',
+      title: t('classes.items.beginner.title'),
+      level: t('classes.items.beginner.level'),
+      description: t('classes.items.beginner.desc'),
+      schedule: t('classes.items.beginner.schedule'),
+      duration: t('classes.items.beginner.duration'),
+      capacity: t('classes.items.beginner.capacity'),
+      price: t('classes.items.beginner.price'),
       color: 'var(--neon-green)',
-      features: ['Basic toprock patterns', 'Simple footwork', 'Fundamental freezes', 'Music understanding', 'Safe falling techniques']
+      features: t('classes.items.beginner.features', { returnObjects: true }) as string[]
     },
     {
       id: 'intermediate',
-      title: 'INTERMEDIATE TECHNIQUES',
-      level: 'Developing',
-      description: 'Build on your foundation. Advanced footwork, entry-level power moves, and more complex combinations. Ready to level up your game.',
-      schedule: 'Tuesday & Thursday, 7:30-9:00 PM',
-      duration: '90 minutes',
-      capacity: '12 students',
-      price: '₪160/month',
+      title: t('classes.items.intermediate.title'),
+      level: t('classes.items.intermediate.level'),
+      description: t('classes.items.intermediate.desc'),
+      schedule: t('classes.items.intermediate.schedule'),
+      duration: t('classes.items.intermediate.duration'),
+      capacity: t('classes.items.intermediate.capacity'),
+      price: t('classes.items.intermediate.price'),
       color: 'var(--neon-orange)',
-      features: ['Advanced footwork', 'Entry power moves', 'Flow development', 'Battle basics', 'Strength conditioning']
+      features: t('classes.items.intermediate.features', { returnObjects: true }) as string[]
     },
     {
       id: 'advanced',
-      title: 'ADVANCED POWER MOVES',
-      level: 'Expert',
-      description: 'Master the impossible. Windmills, headspins, flares and more. Push your limits with our champion instructors.',
-      schedule: 'Wednesday & Friday, 8:00-9:30 PM',
-      duration: '90 minutes',
-      capacity: '8 students',
-      price: '₪200/month',
+      title: t('classes.items.advanced.title'),
+      level: t('classes.items.advanced.level'),
+      description: t('classes.items.advanced.desc'),
+      schedule: t('classes.items.advanced.schedule'),
+      duration: t('classes.items.advanced.duration'),
+      capacity: t('classes.items.advanced.capacity'),
+      price: t('classes.items.advanced.price'),
       color: 'var(--neon-blue)',
-      features: ['Advanced power moves', 'Combo development', 'Competition prep', 'Individual coaching', 'Video analysis']
+      features: t('classes.items.advanced.features', { returnObjects: true }) as string[]
     },
     {
       id: 'kids',
-      title: 'KIDS CLASSES',
-      level: 'Ages 8-14',
-      description: 'Fun, safe, and energetic classes designed for young breakers. Build confidence, coordination, and creativity.',
-      schedule: 'Saturday, 10:00-11:30 AM',
-      duration: '90 minutes',
-      capacity: '20 kids',
-      price: '₪100/month',
+      title: t('classes.items.kids.title'),
+      level: t('classes.items.kids.level'),
+      description: t('classes.items.kids.desc'),
+      schedule: t('classes.items.kids.schedule'),
+      duration: t('classes.items.kids.duration'),
+      capacity: t('classes.items.kids.capacity'),
+      price: t('classes.items.kids.price'),
       color: 'var(--neon-yellow)',
-      features: ['Age-appropriate moves', 'Games and challenges', 'Confidence building', 'Coordination training', 'Creative expression']
+      features: t('classes.items.kids.features', { returnObjects: true }) as string[]
     },
     {
       id: 'jams',
-      title: 'OPEN JAMS',
-      level: 'All Levels',
-      description: 'Practice time, battles, and community vibes. Bring your moves, share your style, and connect with the scene.',
-      schedule: 'Sunday, 7:00-10:00 PM',
-      duration: '3 hours',
-      capacity: 'Open',
-      price: '₪30/session',
+      title: t('classes.items.jams.title'),
+      level: t('classes.items.jams.level'),
+      description: t('classes.items.jams.desc'),
+      schedule: t('classes.items.jams.schedule'),
+      duration: t('classes.items.jams.duration'),
+      capacity: t('classes.items.jams.capacity'),
+      price: t('classes.items.jams.price'),
       color: 'var(--neon-purple)',
-      features: ['Free practice time', 'Informal battles', 'Community building', 'Skill sharing', 'Music mixing']
+      features: t('classes.items.jams.features', { returnObjects: true }) as string[]
     }
   ];
 
@@ -89,23 +91,21 @@ const ClassesSection: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 
-            className="font-righteous text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-4"
+          <h2
+            className="font-righteous text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-4 text-[var(--neon-orange)]"
             style={{
-              color: 'var(--neon-orange)',
               textShadow: '8px 8px 0px var(--neon-green)'
             }}
           >
-            CLASSES &
+            {t('classes.title1')}
           </h2>
-          <h2 
-            className="font-russo text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold"
+          <h2
+            className="font-russo text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[var(--neon-blue)]"
             style={{
-              color: 'var(--neon-blue)',
               textShadow: '6px 6px 0px var(--neon-yellow)'
             }}
           >
-            TRAINING
+            {t('classes.title2')}
           </h2>
         </div>
 
@@ -129,19 +129,18 @@ const ClassesSection: React.FC = () => {
                 <div className="flex-1">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
-                      <h3 
+                      <h3
                         className="font-russo text-xl md:text-2xl lg:text-3xl mb-2"
                         style={{ color: classData.color }}
                       >
                         {classData.title}
                       </h3>
                       <div className="flex flex-wrap gap-4 items-center">
-                        <span 
-                          className="font-exo text-sm px-3 py-1 zero-radius border-2"
+                        <span
+                          className="font-exo text-sm px-3 py-1 zero-radius border-2 bg-transparent"
                           style={{
                             color: classData.color,
                             borderColor: classData.color,
-                            backgroundColor: 'transparent'
                           }}
                         >
                           {classData.level}
@@ -152,7 +151,7 @@ const ClassesSection: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
-                      <span 
+                      <span
                         className="font-exo text-xl md:text-2xl font-bold"
                         style={{ color: classData.color }}
                       >
@@ -163,12 +162,12 @@ const ClassesSection: React.FC = () => {
                 </div>
                 <div className="ml-4">
                   {expandedCard === classData.id ? (
-                    <ChevronUp 
+                    <ChevronUp
                       className="w-8 h-8 transition-transform duration-200"
                       style={{ color: classData.color }}
                     />
                   ) : (
-                    <ChevronDown 
+                    <ChevronDown
                       className="w-8 h-8 transition-transform duration-200"
                       style={{ color: classData.color }}
                     />
@@ -177,10 +176,9 @@ const ClassesSection: React.FC = () => {
               </button>
 
               {/* Expandable Content */}
-              <div 
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  expandedCard === classData.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                }`}
+              <div
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedCard === classData.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
               >
                 <div className="p-6 pt-0 border-t-4" style={{ borderColor: classData.color }}>
                   <div className="grid md:grid-cols-2 gap-6 items-start">
@@ -190,11 +188,11 @@ const ClassesSection: React.FC = () => {
                         {classData.description}
                       </p>
                       <div className="flex-1">
-                        <h4 className="font-exo font-bold text-foreground mb-3">What You'll Learn:</h4>
+                        <h4 className="font-exo font-bold text-foreground mb-3">{t('classes.learnTitle')}</h4>
                         <ul className="space-y-2">
-                          {classData.features.map((feature, index) => (
+                          {Array.isArray(classData.features) && classData.features.map((feature, index) => (
                             <li key={index} className="flex items-center gap-2">
-                              <div 
+                              <div
                                 className="w-2 h-2 zero-radius"
                                 style={{ backgroundColor: classData.color }}
                               />
@@ -225,16 +223,15 @@ const ClassesSection: React.FC = () => {
                       </div>
 
                       <button
-                        className="w-full crusher-btn zero-radius border-4 py-4 px-6 flex items-center justify-center gap-3 transition-all duration-200 hover:scale-105"
+                        className="w-full crusher-btn zero-radius border-4 py-4 px-6 flex items-center justify-center gap-3 transition-all duration-200 hover:scale-105 text-background"
                         style={{
                           backgroundColor: classData.color,
                           borderColor: classData.color,
                           boxShadow: `6px 6px 0px var(--background)`,
-                          color: 'var(--background)'
                         }}
                       >
                         <Calendar className="w-5 h-5" />
-                        <span className="font-exo text-lg font-bold">BOOK NOW</span>
+                        <span className="font-exo text-lg font-bold">{t('classes.bookNow')}</span>
                       </button>
                     </div>
                   </div>
@@ -247,18 +244,12 @@ const ClassesSection: React.FC = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <p className="font-roboto text-foreground text-lg mb-6">
-            Not sure which class is right for you?
+            {t('classes.notSure')}
           </p>
           <button
-            className="crusher-btn zero-radius border-4 py-4 px-8 transition-all duration-200 hover:scale-105"
-            style={{
-              backgroundColor: 'var(--neon-green)',
-              borderColor: 'var(--neon-green)',
-              boxShadow: '8px 8px 0px var(--neon-orange)',
-              color: 'var(--background)'
-            }}
+            className="crusher-btn zero-radius border-4 py-4 px-8 transition-all duration-200 hover:scale-105 bg-[var(--neon-green)] border-[var(--neon-green)] text-background shadow-[8px_8px_0px_var(--neon-orange)]"
           >
-            <span className="font-exo text-xl font-bold">FREE TRIAL CLASS</span>
+            <span className="font-exo text-xl font-bold">{t('classes.freeTrial')}</span>
           </button>
         </div>
       </div>

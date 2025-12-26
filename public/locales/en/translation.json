@@ -1,0 +1,261 @@
+{
+    "hero": {
+        "title": "BREAKDANCE",
+        "classes": "CLASSES",
+        "performances": "PERFORMANCES",
+        "location": "IN TEL AVIV",
+        "cta": {
+            "bookClass": "BOOK CLASS",
+            "bookShow": "BOOK SHOW",
+            "discover": "DISCOVER",
+            "scroll": "SCROLL TO EXPLORE"
+        }
+    },
+    "nav": {
+        "about": "ABOUT",
+        "classes": "CLASSES",
+        "performances": "SHOWS",
+        "contact": "CONTACT"
+    },
+    "status": {
+        "open": "STUDIO LIVE",
+        "closed": "SESSION ENDED",
+        "openMsg": "Session in progress - Drop in!",
+        "closedMsg": "Recharging for next battle. See schedule."
+    },
+    "map": {
+        "findUs": "FIND US IN",
+        "telAviv": "TEL AVIV",
+        "studioName": "BREAKDANCE STUDIO",
+        "addressShort": "123 Dizengoff Street\nTel Aviv, Israel",
+        "openMaps": "OPEN IN MAPS",
+        "studioInfo": "STUDIO INFO",
+        "addressLabel": "HEADQUARTERS",
+        "phoneLabel": "HOTLINE",
+        "emailLabel": "EMAIL",
+        "callNow": "CALL NOW",
+        "scheduleTitle": "WEEKLY DROP"
+    },
+    "about": {
+        "titleWords": [
+            "ABOUT",
+            "THE",
+            "SCENE"
+        ],
+        "slides": {
+            "story": {
+                "title": "STUDIO STORY",
+                "content": "Founded in the heart of Tel Aviv, our studio is where raw talent meets professional training. We believe breakdance is more than moves - it's a culture, a lifestyle, and a community."
+            },
+            "styles": {
+                "title": "DANCE STYLES",
+                "content": "Master the fundamentals: toprock, downrock, power moves, and freezes. From windmills to headspins, we break down every element with precision and passion."
+            },
+            "community": {
+                "title": "COMMUNITY",
+                "content": "Join a crew that supports each other. Regular battles, cyphers, and jams create bonds that last beyond the studio. Everyone starts somewhere - everyone belongs."
+            },
+            "credentials": {
+                "title": "CREDENTIALS",
+                "content": "Learn from champions. Our instructors compete internationally, judge battles, and bring decades of street credibility to every class."
+            }
+        }
+    },
+    "classes": {
+        "title1": "CLASSES &",
+        "title2": "TRAINING",
+        "bookNow": "BOOK NOW",
+        "learnTitle": "What You'll Learn:",
+        "notSure": "Not sure which class is right for you?",
+        "freeTrial": "FREE TRIAL CLASS",
+        "items": {
+            "beginner": {
+                "title": "BEGINNER BREAKING",
+                "level": "Entry Level",
+                "desc": "Perfect for first-timers. Learn basic toprock, simple footwork, and fundamental freezes. No experience required - just bring your energy!",
+                "schedule": "Monday & Wednesday, 7:00-8:30 PM",
+                "duration": "90 minutes",
+                "capacity": "15 students",
+                "price": "₪120/month",
+                "features": [
+                    "Basic toprock patterns",
+                    "Simple footwork",
+                    "Fundamental freezes",
+                    "Music understanding",
+                    "Safe falling techniques"
+                ]
+            },
+            "intermediate": {
+                "title": "INTERMEDIATE TECHNIQUES",
+                "level": "Developing",
+                "desc": "Build on your foundation. Advanced footwork, entry-level power moves, and more complex combinations. Ready to level up your game.",
+                "schedule": "Tuesday & Thursday, 7:30-9:00 PM",
+                "duration": "90 minutes",
+                "capacity": "12 students",
+                "price": "₪160/month",
+                "features": [
+                    "Advanced footwork",
+                    "Entry power moves",
+                    "Flow development",
+                    "Battle basics",
+                    "Strength conditioning"
+                ]
+            },
+            "advanced": {
+                "title": "ADVANCED POWER MOVES",
+                "level": "Expert",
+                "desc": "Master the impossible. Windmills, headspins, flares and more. Push your limits with our champion instructors.",
+                "schedule": "Wednesday & Friday, 8:00-9:30 PM",
+                "duration": "90 minutes",
+                "capacity": "8 students",
+                "price": "₪200/month",
+                "features": [
+                    "Advanced power moves",
+                    "Combo development",
+                    "Competition prep",
+                    "Individual coaching",
+                    "Video analysis"
+                ]
+            },
+            "kids": {
+                "title": "KIDS CLASSES",
+                "level": "Ages 8-14",
+                "desc": "Fun, safe, and energetic classes designed for young breakers. Build confidence, coordination, and creativity.",
+                "schedule": "Saturday, 10:00-11:30 AM",
+                "duration": "90 minutes",
+                "capacity": "20 kids",
+                "price": "₪100/month",
+                "features": [
+                    "Age-appropriate moves",
+                    "Games and challenges",
+                    "Confidence building",
+                    "Coordination training",
+                    "Creative expression"
+                ]
+            },
+            "jams": {
+                "title": "OPEN JAMS",
+                "level": "All Levels",
+                "desc": "Practice time, battles, and community vibes. Bring your moves, share your style, and connect with the scene.",
+                "schedule": "Sunday, 7:00-10:00 PM",
+                "duration": "3 hours",
+                "capacity": "Open",
+                "price": "₪30/session",
+                "features": [
+                    "Free practice time",
+                    "Informal battles",
+                    "Community building",
+                    "Skill sharing",
+                    "Music mixing"
+                ]
+            }
+        }
+    },
+    "performances": {
+        "title1": "PERFORMANCES",
+        "title2": "& SHOWS",
+        "recentTitle": "RECENT PERFORMANCES",
+        "bookingTitle": "BOOKING PACKAGES",
+        "bookBtn": "BOOK PERFORMANCE",
+        "packages": {
+            "solo": {
+                "title": "SOLO PERFORMANCE",
+                "desc": "Individual showcase featuring one of our top breakers. Perfect for smaller events and intimate venues.",
+                "features": [
+                    "1 professional breaker",
+                    "15-minute performance",
+                    "Custom routine",
+                    "Sound system included",
+                    "Meet & greet"
+                ],
+                "price": "₪800"
+            },
+            "battle": {
+                "title": "GROUP BATTLE",
+                "desc": "High-energy battle showcase with multiple dancers. Crowd participation and interactive elements.",
+                "features": [
+                    "4-6 professional breakers",
+                    "30-minute show",
+                    "Audience participation",
+                    "MC included",
+                    "Custom music"
+                ],
+                "price": "₪2200"
+            },
+            "workshop": {
+                "title": "WORKSHOP + SHOW",
+                "desc": "Educational workshop followed by performance. Great for schools, community centers, and corporate events.",
+                "features": [
+                    "90-minute workshop",
+                    "20-minute performance",
+                    "All skill levels",
+                    "Educational materials",
+                    "Q&A session"
+                ],
+                "price": "₪1500"
+            },
+            "custom": {
+                "title": "CUSTOM EVENTS",
+                "desc": "Tailored performances for your specific event. Weddings, bar mitzvahs, corporate events, and more.",
+                "features": [
+                    "Custom choreography",
+                    "Flexible duration",
+                    "Themed performances",
+                    "Full production support",
+                    "Event coordination"
+                ],
+                "price": "Quote"
+            }
+        },
+        "videos": {
+            "v1": "Tel Aviv Battle 2024",
+            "v2": "Power Move Showcase",
+            "v3": "Cypher Sessions",
+            "v4": "Street Performance",
+            "v5": "Workshop Demo",
+            "v6": "Competition Prep",
+            "v7": "Underground Sessions",
+            "v8": "Final Battle"
+        }
+    },
+    "contact": {
+        "join": "JOIN",
+        "the": "THE",
+        "crew": "CREW",
+        "subtitle": "Ready to start your breaking journey?",
+        "form": {
+            "name": "YOUR NAME",
+            "email": "YOUR EMAIL",
+            "phone": "YOUR PHONE",
+            "message": "TELL US ABOUT YOUR INTEREST IN BREAKDANCE...",
+            "send": "SEND MESSAGE",
+            "success": "Message sent! We'll get back to you soon."
+        },
+        "chat": {
+            "title": "QUICK CHAT?",
+            "text": "Get instant answers to your questions about classes, schedules, and more.",
+            "btn": "WHATSAPP US"
+        },
+        "social": {
+            "title": "FOLLOW THE SCENE"
+        },
+        "other": {
+            "title": "OTHER WAYS TO REACH US"
+        },
+        "footerMsg": "LEARN. PERFORM. EXPERIENCE THE CULTURE."
+    },
+    "footer": {
+        "brand1": "BREAKDANCE",
+        "brand2": "TEL AVIV",
+        "copyright": "© 2024 Breakdance Tel Aviv. All rights reserved. Keep breaking, keep growing."
+    },
+    "loading": {
+        "words": [
+            "BREAK",
+            "DANCE",
+            "TEL",
+            "AVIV"
+        ],
+        "text": "LOADING..."
+    }
+}

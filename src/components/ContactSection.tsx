@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Send, MessageCircle, Instagram, Youtube, Facebook, Mail } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,7 +16,7 @@ const ContactSection: React.FC = () => {
     // Handle form submission - in real implementation, this would send to a backend
     console.log('Form submitted:', formData);
     // Show success message or handle the submission
-    alert('Message sent! We\'ll get back to you soon.');
+    alert(t('contact.form.success'));
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
@@ -58,39 +60,36 @@ const ContactSection: React.FC = () => {
         {/* Section Title with Multi-colored Words */}
         <div className="text-center mb-16">
           <div className="flex flex-wrap justify-center items-center gap-4 mb-8">
-            <h2 
-              className="font-righteous text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold transition-all duration-300 hover:scale-110 cursor-pointer"
+            <h2
+              className="font-righteous text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold transition-all duration-300 hover:scale-110 cursor-pointer text-[var(--neon-green)]"
               style={{
-                color: 'var(--neon-green)',
                 textShadow: '8px 8px 0px var(--neon-orange)'
               }}
             >
-              JOIN
+              {t('contact.join')}
             </h2>
-            <h2 
-              className="font-righteous text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold transition-all duration-300 hover:scale-110 cursor-pointer"
+            <h2
+              className="font-righteous text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold transition-all duration-300 hover:scale-110 cursor-pointer text-[var(--neon-yellow)]"
               style={{
-                color: 'var(--neon-yellow)',
                 textShadow: '8px 8px 0px var(--neon-purple)'
               }}
             >
-              THE
+              {t('contact.the')}
             </h2>
-            <h2 
-              className="font-righteous text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold transition-all duration-300 hover:scale-110 cursor-pointer"
+            <h2
+              className="font-righteous text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold transition-all duration-300 hover:scale-110 cursor-pointer text-[var(--neon-orange)]"
               style={{
-                color: 'var(--neon-orange)',
                 textShadow: '8px 8px 0px var(--neon-blue)'
               }}
             >
-              CREW
+              {t('contact.crew')}
             </h2>
           </div>
-          <p 
+          <p
             className="font-roboto text-xl text-foreground"
             style={{ textShadow: '2px 2px 0px var(--neon-green)' }}
           >
-            Ready to start your breaking journey?
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -98,17 +97,13 @@ const ContactSection: React.FC = () => {
           {/* Contact Form */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div 
-                className="zero-radius border-4 p-1"
-                style={{
-                  borderColor: 'var(--neon-green)',
-                  boxShadow: '4px 4px 0px var(--neon-blue)'
-                }}
+              <div
+                className="zero-radius border-4 p-1 border-[var(--neon-green)] shadow-[4px_4px_0px_var(--neon-blue)]"
               >
                 <input
                   type="text"
                   name="name"
-                  placeholder="YOUR NAME"
+                  placeholder={t('contact.form.name')}
                   value={formData.name}
                   onChange={handleInputChange}
                   required
@@ -116,17 +111,13 @@ const ContactSection: React.FC = () => {
                 />
               </div>
 
-              <div 
-                className="zero-radius border-4 p-1"
-                style={{
-                  borderColor: 'var(--neon-orange)',
-                  boxShadow: '4px 4px 0px var(--neon-purple)'
-                }}
+              <div
+                className="zero-radius border-4 p-1 border-[var(--neon-orange)] shadow-[4px_4px_0px_var(--neon-purple)]"
               >
                 <input
                   type="email"
                   name="email"
-                  placeholder="YOUR EMAIL"
+                  placeholder={t('contact.form.email')}
                   value={formData.email}
                   onChange={handleInputChange}
                   required
@@ -134,33 +125,25 @@ const ContactSection: React.FC = () => {
                 />
               </div>
 
-              <div 
-                className="zero-radius border-4 p-1"
-                style={{
-                  borderColor: 'var(--neon-blue)',
-                  boxShadow: '4px 4px 0px var(--neon-yellow)'
-                }}
+              <div
+                className="zero-radius border-4 p-1 border-[var(--neon-blue)] shadow-[4px_4px_0px_var(--neon-yellow)]"
               >
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="YOUR PHONE"
+                  placeholder={t('contact.form.phone')}
                   value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full p-4 zero-radius border-none bg-background text-foreground font-roboto text-lg placeholder:text-gray-500 focus:outline-none"
                 />
               </div>
 
-              <div 
-                className="zero-radius border-4 p-1"
-                style={{
-                  borderColor: 'var(--neon-purple)',
-                  boxShadow: '4px 4px 0px var(--neon-green)'
-                }}
+              <div
+                className="zero-radius border-4 p-1 border-[var(--neon-purple)] shadow-[4px_4px_0px_var(--neon-green)]"
               >
                 <textarea
                   name="message"
-                  placeholder="TELL US ABOUT YOUR INTEREST IN BREAKDANCE..."
+                  placeholder={t('contact.form.message')}
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={6}
@@ -171,16 +154,10 @@ const ContactSection: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full crusher-btn zero-radius border-4 py-6 px-8 flex items-center justify-center gap-4 transition-all duration-200 hover:scale-105"
-                style={{
-                  backgroundColor: 'var(--neon-green)',
-                  borderColor: 'var(--neon-green)',
-                  boxShadow: '8px 8px 0px var(--neon-orange)',
-                  color: 'var(--background)'
-                }}
+                className="w-full crusher-btn zero-radius border-4 py-6 px-8 flex items-center justify-center gap-4 transition-all duration-200 hover:scale-105 bg-[var(--neon-green)] border-[var(--neon-green)] text-background shadow-[8px_8px_0px_var(--neon-orange)]"
               >
                 <Send className="w-6 h-6" />
-                <span className="font-exo text-xl font-bold">SEND MESSAGE</span>
+                <span className="font-exo text-xl font-bold">{t('contact.form.send')}</span>
               </button>
             </form>
           </div>
@@ -188,69 +165,50 @@ const ContactSection: React.FC = () => {
           {/* Contact Info & Social Links */}
           <div className="space-y-8">
             {/* WhatsApp CTA */}
-            <div 
-              className="zero-radius border-4 p-8 bg-card-bg text-center"
-              style={{
-                borderColor: 'var(--neon-green)',
-                boxShadow: '8px 8px 0px var(--neon-green)'
-              }}
+            <div
+              className="zero-radius border-4 p-8 bg-card-bg text-center border-[var(--neon-green)] shadow-[8px_8px_0px_var(--neon-green)]"
             >
-              <MessageCircle 
-                className="w-16 h-16 mx-auto mb-4"
-                style={{ color: 'var(--neon-green)' }}
+              <MessageCircle
+                className="w-16 h-16 mx-auto mb-4 text-[var(--neon-green)]"
               />
-              <h3 
-                className="font-russo text-2xl mb-4"
+              <h3
+                className="font-russo text-2xl mb-4 text-[var(--neon-green)]"
                 style={{
-                  color: 'var(--neon-green)',
                   textShadow: '2px 2px 0px var(--neon-yellow)'
                 }}
               >
-                QUICK CHAT?
+                {t('contact.chat.title')}
               </h3>
               <p className="font-roboto text-foreground mb-6">
-                Get instant answers to your questions about classes, schedules, and more.
+                {t('contact.chat.text')}
               </p>
               <button
-                className="crusher-btn zero-radius border-4 py-3 px-6 transition-all duration-200 hover:scale-105"
-                style={{
-                  backgroundColor: 'var(--neon-green)',
-                  borderColor: 'var(--neon-green)',
-                  boxShadow: '6px 6px 0px var(--neon-yellow)',
-                  color: 'var(--background)'
-                }}
+                className="crusher-btn zero-radius border-4 py-3 px-6 transition-all duration-200 hover:scale-105 bg-[var(--neon-green)] border-[var(--neon-green)] text-background shadow-[6px_6px_0px_var(--neon-yellow)]"
               >
-                <span className="font-exo text-lg font-bold">WHATSAPP US</span>
+                <span className="font-exo text-lg font-bold">{t('contact.chat.btn')}</span>
               </button>
             </div>
 
             {/* Social Media Links */}
-            <div 
-              className="zero-radius border-4 p-8 bg-card-bg"
-              style={{
-                borderColor: 'var(--neon-purple)',
-                boxShadow: '8px 8px 0px var(--neon-purple)'
-              }}
+            <div
+              className="zero-radius border-4 p-8 bg-card-bg border-[var(--neon-purple)] shadow-[8px_8px_0px_var(--neon-purple)]"
             >
-              <h3 
-                className="font-russo text-2xl mb-6 text-center"
+              <h3
+                className="font-russo text-2xl mb-6 text-center text-[var(--neon-purple)]"
                 style={{
-                  color: 'var(--neon-purple)',
                   textShadow: '2px 2px 0px var(--neon-orange)'
                 }}
               >
-                FOLLOW THE SCENE
+                {t('contact.social.title')}
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((social) => (
                   <button
                     key={social.name}
-                    className="crusher-btn zero-radius border-4 p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:scale-105"
+                    className="crusher-btn zero-radius border-4 p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:scale-105 text-background shadow-[4px_4px_0px_var(--background)]"
                     style={{
                       backgroundColor: social.color,
                       borderColor: social.color,
-                      boxShadow: `4px 4px 0px var(--background)`,
-                      color: 'var(--background)'
                     }}
                   >
                     {social.icon}
@@ -263,36 +221,29 @@ const ContactSection: React.FC = () => {
             </div>
 
             {/* Contact Info */}
-            <div 
-              className="zero-radius border-4 p-8 bg-card-bg"
-              style={{
-                borderColor: 'var(--neon-blue)',
-                boxShadow: '8px 8px 0px var(--neon-blue)'
-              }}
+            <div
+              className="zero-radius border-4 p-8 bg-card-bg border-[var(--neon-blue)] shadow-[8px_8px_0px_var(--neon-blue)]"
             >
-              <h3 
-                className="font-russo text-2xl mb-6"
+              <h3
+                className="font-russo text-2xl mb-6 text-[var(--neon-blue)]"
                 style={{
-                  color: 'var(--neon-blue)',
                   textShadow: '2px 2px 0px var(--neon-green)'
                 }}
               >
-                OTHER WAYS TO REACH US
+                {t('contact.other.title')}
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Mail 
-                    className="w-5 h-5"
-                    style={{ color: 'var(--neon-blue)' }}
+                  <Mail
+                    className="w-5 h-5 text-[var(--neon-blue)]"
                   />
                   <span className="font-roboto text-foreground">
                     info@breakdancetlv.com
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <MessageCircle 
-                    className="w-5 h-5"
-                    style={{ color: 'var(--neon-green)' }}
+                  <MessageCircle
+                    className="w-5 h-5 text-[var(--neon-green)]"
                   />
                   <span className="font-roboto text-foreground">
                     +972-3-555-0123
@@ -305,14 +256,13 @@ const ContactSection: React.FC = () => {
 
         {/* Bottom Message */}
         <div className="text-center mt-16">
-          <p 
-            className="font-exo text-lg"
+          <p
+            className="font-exo text-lg text-[var(--neon-yellow)]"
             style={{
-              color: 'var(--neon-yellow)',
               textShadow: '2px 2px 0px var(--neon-purple)'
             }}
           >
-            LEARN. PERFORM. EXPERIENCE THE CULTURE.
+            {t('contact.footerMsg')}
           </p>
         </div>
       </div>

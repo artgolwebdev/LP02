@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import LoadingScreen from "./components/LoadingScreen";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
@@ -6,8 +7,11 @@ import ClassesSection from "./components/ClassesSection";
 import PerformancesSection from "./components/PerformancesSection";
 import MapSection from "./components/MapSection";
 import ContactSection from "./components/ContactSection";
+import CustomCursor from "./components/CustomCursor";
+import LanguageSwitcher from "./components/LanguageSwitcher";
 
 export default function App() {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLoadingComplete = () => {
@@ -39,6 +43,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <CustomCursor />
+      <LanguageSwitcher />
+
       {/* Loading Screen */}
       {isLoading && (
         <LoadingScreen onComplete={handleLoadingComplete} />
@@ -80,7 +87,7 @@ export default function App() {
                   textShadow: "2px 2px 0px var(--neon-orange)",
                 }}
               >
-                BREAKDANCE
+                {t('footer.brand1')}
               </h3>
               <span
                 className="font-russo text-xl md:text-2xl"
@@ -89,12 +96,11 @@ export default function App() {
                   textShadow: "2px 2px 0px var(--neon-yellow)",
                 }}
               >
-                TEL AVIV
+                {t('footer.brand2')}
               </span>
             </div>
             <p className="font-roboto text-foreground text-sm">
-              © 2024 Breakdance Tel Aviv. All rights reserved.
-              Keep breaking, keep growing.
+              {t('footer.copyright')}
             </p>
             <div className="flex justify-center gap-4 mt-4">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -112,147 +118,6 @@ export default function App() {
           </div>
         </footer>
       </div>
-
-      {/* Global Styles */}
-      <style jsx global>{`
-        /* Custom scrollbar for webkit browsers */
-        ::-webkit-scrollbar {
-          width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: var(--background);
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: var(--neon-green);
-          border-radius: 0;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: var(--neon-orange);
-        }
-
-        /* Selection colors */
-        ::selection {
-          background: var(--neon-green);
-          color: var(--background);
-        }
-
-        ::-moz-selection {
-          background: var(--neon-green);
-          color: var(--background);
-        }
-
-        /* Smooth focus outline */
-        *:focus {
-          outline: 2px solid var(--neon-blue);
-          outline-offset: 2px;
-        }
-
-        /* Ensure all buttons and interactive elements are accessible */
-        button {
-          cursor: pointer;
-          user-select: none;
-        }
-
-        /* Reduce motion for users who prefer it */
-        @media (prefers-reduced-motion: reduce) {
-          *,
-          *::before,
-          *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-            scroll-behavior: auto !important;
-          }
-        }
-
-        /* Print styles */
-        @media print {
-          * {
-            background: white !important;
-            color: black !important;
-            box-shadow: none !important;
-            text-shadow: none !important;
-          }
-        }
-
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-          * {
-            border-color: ButtonText !important;
-          }
-        }
-
-        /* Dark mode media query support */
-        @media (prefers-color-scheme: dark) {
-          :root {
-            color-scheme: dark;
-          }
-        }
-
-        /* Mobile optimization */
-        @media (max-width: 768px) {
-          /* Prevent horizontal scrolling */
-          html {
-            overflow-x: hidden;
-          }
-
-          /* Optimize touch targets */
-          button,
-          a,
-          input,
-          textarea {
-            min-height: 44px;
-            min-width: 44px;
-          }
-
-          /* Reduce motion on mobile by default */
-          .crusher-btn:active {
-            animation-duration: 0.1s;
-          }
-
-          /* Better mobile typography */
-          body {
-            font-size: 16px;
-            line-height: 1.5;
-          }
-        }
-
-        /* Tablet optimization */
-        @media (min-width: 768px) and (max-width: 1023px) {
-          /* Optimize for tablet viewports */
-          .brutalist-shadow {
-            box-shadow: 6px 6px 0px var(--neon-green);
-          }
-        }
-
-        /* Desktop enhancements */
-        @media (min-width: 1024px) {
-          /* Enhanced hover effects for desktop */
-          .crusher-btn:hover {
-            transform: scale(1.02) translate(-1px, -1px);
-          }
-
-          /* Better desktop spacing */
-          section {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-          }
-        }
-
-        /* Safe area support for devices with notches */
-        @supports (padding: env(safe-area-inset-top)) {
-          .safe-top {
-            padding-top: env(safe-area-inset-top);
-          }
-
-          .safe-bottom {
-            padding-bottom: env(safe-area-inset-bottom);
-          }
-        }
-      `}</style>
     </div>
   );
 }

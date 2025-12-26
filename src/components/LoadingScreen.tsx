@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface LoadingScreenProps {
   onComplete: () => void;
 }
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
+  const { t } = useTranslation();
   const [progress, setProgress] = useState(0);
   const [wordIndex, setWordIndex] = useState(0);
 
-  const words = ['BREAK', 'DANCE', 'TEL', 'AVIV'];
+  const words = t('loading.words', { returnObjects: true }) as string[];
 
   useEffect(() => {
     const duration = window.innerWidth < 768 ? 2500 : 3000;
@@ -35,7 +37,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
     }, 400);
 
     return () => clearInterval(wordTimer);
-  }, []);
+  }, [words.length]);
 
   return (
     <div className="fixed inset-0 z-50 bg-background flex flex-col items-center justify-center">
@@ -57,7 +59,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       </div>
 
       {/* Breakdancer icon */}
-      <div 
+      <div
         className="relative mb-12 w-24 h-24 zero-radius brutalist-border bg-card-bg flex items-center justify-center"
         style={{
           borderColor: 'var(--neon-green)',
@@ -70,41 +72,41 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
       {/* Typography animation */}
       <div className="text-center mb-16">
-        <div 
+        <div
           className="font-righteous text-6xl md:text-8xl mb-4"
           style={{
             color: 'var(--neon-green)',
             textShadow: '4px 4px 0px var(--neon-orange)',
-            animation: 'pulse 1s ease-in-out infinite'
+            animation: 'pulse-scale 1s ease-in-out infinite'
           }}
         >
-          {words[wordIndex]}
+          {words[wordIndex] || words[0]}
         </div>
-        <div 
+        <div
           className="font-russo text-2xl md:text-3xl"
           style={{
             color: 'var(--neon-yellow)',
             textShadow: '2px 2px 0px var(--neon-purple)'
           }}
         >
-          LOADING...
+          {t('loading.text')}
         </div>
       </div>
 
       {/* Progress bar */}
       <div className="w-80 max-w-[90vw] relative">
-        <div 
+        <div
           className="h-4 zero-radius border-4 bg-card-bg"
           style={{ borderColor: 'var(--neon-blue)' }}
         >
-          <div 
+          <div
             className="h-full zero-radius transition-all duration-75 relative overflow-hidden"
             style={{
               width: `${progress}%`,
               background: `linear-gradient(90deg, var(--neon-green), var(--neon-yellow), var(--neon-orange))`,
             }}
           >
-            <div 
+            <div
               className="absolute inset-0 opacity-50"
               style={{
                 background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
@@ -113,30 +115,13 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
             />
           </div>
         </div>
-        <div 
+        <div
           className="text-center mt-4 font-exo text-lg"
           style={{ color: 'var(--neon-blue)' }}
         >
           {Math.round(progress)}%
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes spin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        
-        @keyframes shine {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-        
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
-        }
-      `}</style>
     </div>
   );
 };
