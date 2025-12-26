@@ -357,7 +357,7 @@ const PerformancesSection: React.FC = () => {
                 </p>
 
                 <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, index) => (
+                  {(Array.isArray(pkg.features) ? pkg.features : []).map((feature, index) => (
                     <li key={index} className="flex items-center gap-3">
                       <div
                         className="w-3 h-3 zero-radius"

@@ -190,7 +190,7 @@ const ClassesSection: React.FC = () => {
                       <div className="flex-1">
                         <h4 className="font-exo font-bold text-foreground mb-3">{t('classes.learnTitle')}</h4>
                         <ul className="space-y-2">
-                          {Array.isArray(classData.features) && classData.features.map((feature, index) => (
+                          {(Array.isArray(classData.features) ? classData.features : []).map((feature, index) => (
                             <li key={index} className="flex items-center gap-2">
                               <div
                                 className="w-2 h-2 zero-radius"
